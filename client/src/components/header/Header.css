@@ -1,0 +1,132 @@
+nav{
+    height: 114px;
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_box{
+    width: var(--max-width);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cname_box{
+    background-color: var(--accent);
+    width: 285px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+@font-face {
+    font-family: 'InterEB';
+    src: local('InterEB'),
+        url('../../fonts/Inter-ExtraBold.ttf');
+    font-weight: bold;
+}
+
+.cname_box_text{
+    color: white;
+    font-family: 'InterEB';
+    letter-spacing: -0.05em;
+    font-size: 26px;
+    padding: 0 11px;
+    margin-right: 4px;
+    height: 68px;
+    border-radius: 12px 0px 0px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cname_box_text:hover{
+    background-color: var(--accent-hover);
+}
+
+@font-face {
+    font-family: 'InterB';
+    src: local('InterB'),
+        url('../../fonts/Inter-Bold.ttf');
+    font-weight: bold;
+}
+
+.cname_box_catalog{
+    width: 115px;
+    height: 50px;
+    border-radius: var(--border-radius);
+    background-color: var(--accent-hover);
+    color: white;
+    font-family: 'InterB';
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow-btn);
+}
+
+.cname_box_catalog:hover{
+    background-color: #278a2c;
+    cursor: pointer;
+}
+
+.search_box{
+    width: 570px;
+    height: 68px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search_button{
+    margin: 0 15px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--btn);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-btn);
+}
+
+.search_button:hover{
+    background-color: var(--btn-hover);
+}
+
+input{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    height: 68px;
+    width: 500px;
+    padding: 0 15px;
+    border-radius: var(--border-radius);
+}
+
+.nav_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 230px;
+}
+
+.nav_some_button{
+    height: 50px;
+    width: 50px;
+    background-color: var(--btn);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    box-shadow: var(--shadow-btn);
+}
+
+.nav_some_button:hover{
+    background-color: var(--btn-hover);
+}
