@@ -14,7 +14,7 @@ const Header: FC = () => {
                 <nav>
                     <div className='nav_box'>
                         <div className='cname_box'>
-                            <a className='cname_box_text'>GreenAreal</a>
+                            <a href={import.meta.env.VITE_BASE_URL} className='cname_box_text'>GreenAreal</a>
                             <span className='cname_box_catalog'>
                                 <div style={{pointerEvents: 'none', userSelect: 'none', margin: '0 12px'}}>Каталог</div>
                                 <img src={arrowSVG} alt="" style={{pointerEvents: 'none', userSelect: 'none'}}/>
