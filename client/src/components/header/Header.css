@@ -1,9 +1,11 @@
 nav{
+    transition: .5s;
     height: 114px;
     background-color: var(--background);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow);
 }
 
 .nav_box{
@@ -85,6 +87,10 @@ nav{
     justify-content: space-between;
 }
 
+.search_box input{
+    user-select: none;
+}
+
 .search_button{
     margin: 0 15px;
     width: 40px;
@@ -126,8 +132,23 @@ input{
     border-radius: var(--border-radius);
     cursor: pointer;
     box-shadow: var(--shadow-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav_some_button:hover{
     background-color: var(--btn-hover);
+}
+
+.nav_some_button input {
+    display: none;
+  }
+
+.theme{
+    background-color: var(--moon_btn);
+}
+
+.theme:hover{
+    background-color: var(--moon_btn-hover);
 }

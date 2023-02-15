@@ -19,6 +19,8 @@ body {
   --shadow-btn: 0px 2px 4px rgba(0, 0, 0, 0.25);
   --max-width: 1180px;
   --border-radius: 12px;
+  --moon_btn: #D9D9D9;
+  --moon_btn-hover: #cacaca;
 }
 
 [data-theme='dark'] {
@@ -26,69 +28,14 @@ body {
   --text-primary: #f2f2f2;
   --text-secondary: #a7a4a4;
   --border: #696969;
-  --shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow: 0px 4px 12px rgb(36, 36, 36);
+  --moon_btn: #ffff00;
+  --moon_btn-hover: #dddd00;
 }
 
 body{
+  transition: .5s;
   margin: 0;
   background-color: var(--background);
   color: var(--text-primary);
-}
-
-.container-switch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* The switch - the box around the slider */
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 2.7em;
-  height: 1.6em;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 30px;
-  outline: 1px solid var(--border);
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1em;
-  width: 1em;
-  border-radius: 20px;
-  left: 0.3em;
-  bottom: 0.3em;
-  background-color: var(--text-primary);
-  transition: .4s;
-}
-
-input:checked+.slider {
-  background-color: var(--accent);
-}
-
-
-input:checked+.slider:before {
-  transform: translateX(1.1em);
 }
