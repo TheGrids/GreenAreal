@@ -74,6 +74,7 @@ nav{
 }
 
 .search_box{
+    background-color: white;
     width: 570px;
     height: 68px;
     border-radius: var(--border-radius);
@@ -115,7 +116,7 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 230px;
+    width: 280px;
 }
 
 .nav_some_button{
