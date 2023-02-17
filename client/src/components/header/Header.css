@@ -5,7 +5,6 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow);
 }
 
 .nav_box{
@@ -121,8 +120,8 @@ input{
 .nav_buttons{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 280px;
+    justify-content: space-between;
+    width: 250px;
 }
 
 .nav_some_button{
