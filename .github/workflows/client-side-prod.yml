@@ -76,7 +76,7 @@ jobs:
         name: client-static
         path: dist/
     - name: Deploy static content to local server (rsync)
-      run: rsync -av dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/greenareal/
+      run: rsync -avz dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/greenareal/
 
     - name: Update deployment status (success)
       if: success()
