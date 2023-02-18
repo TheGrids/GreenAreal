@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: prod
-      url: https://greenareal.ruuniversityweb.site
+      url: https://greenareal.ru
 
     steps:
     - name: Install SSH Key
@@ -67,7 +67,7 @@ jobs:
       id: deployment
       with:
         token: "${{ github.token }}"
-        target_url: https://greenareal
+        target_url: https://greenareal.ru
         environment: prod
 
     - name: Download static content
@@ -83,7 +83,7 @@ jobs:
       uses: chrnorm/deployment-status@releases/v1
       with:
         token: "${{ github.token }}"
-        target_url: https://universityweb.site
+        target_url: https://greenareal.ru
         state: "success"
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
     - name: Update deployment status (failure)
