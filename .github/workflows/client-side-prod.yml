@@ -21,11 +21,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       
-    - name: Create .env.production file
+    - name: Create .env file
       uses: SpicyPizza/create-envfile@v1.3.1
       with:
         VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
-        file_name: .env.production
+        file_name: .env
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
