@@ -26,7 +26,6 @@ jobs:
       with:
         envkey_VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
         file_name: .env.production
-        fail_on_empty: true
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
