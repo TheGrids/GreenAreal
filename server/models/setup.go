@@ -12,9 +12,11 @@ var DB *gorm.DB
 
 func ConnectionDataBase() {
 	// Checking .env file
-	godotenv.Load()
+	err := godotenv.Load()
+	if err != nil {
+		return
+	}
 	dsn, exist := os.LookupEnv("POSTGRES_CONNECT")
-
 	if !exist {
 		log.Printf("Error loading .env file")
 	}
@@ -27,7 +29,10 @@ func ConnectionDataBase() {
 	}
 
 	// Adding schema to database
-	database.AutoMigrate()
+	err = database.AutoMigrate(&User{})
+	if err != nil {
+		return
+	}
 
 	DB = database
 }
