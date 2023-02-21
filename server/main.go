@@ -4,6 +4,7 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"greenareal.ru/m/v2/models"
+	"greenareal.ru/m/v2/services"
 	"time"
 )
 
@@ -24,6 +25,9 @@ func main() {
 	//{
 	//	api.POST("/register", services.RegisterUser)
 	//}
+
+	r.Static("/image", "./image")
+	r.GET("/new_products", services.GetNewProducts)
 
 	r.Run()
 }

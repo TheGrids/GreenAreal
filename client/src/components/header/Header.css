@@ -25,13 +25,6 @@ nav{
     box-shadow: var(--shadow);
 }
 
-@font-face {
-    font-family: 'InterEB';
-    src: local('InterEB'),
-        url('../../fonts/Inter-ExtraBold.ttf');
-    font-weight: bold;
-}
-
 .cname_box_text{
     color: white;
     font-family: 'InterEB';
@@ -48,13 +41,6 @@ nav{
 
 .cname_box_text:hover{
     background-color: var(--accent-hover);
-}
-
-@font-face {
-    font-family: 'InterB';
-    src: local('InterB'),
-        url('../../fonts/Inter-Bold.ttf');
-    font-weight: bold;
 }
 
 .cname_box_catalog{
@@ -107,7 +93,7 @@ nav{
     background-color: var(--btn-hover);
 }
 
-input{
+.search_box input{
     font-size: 16px;
     border: none;
     outline: none;

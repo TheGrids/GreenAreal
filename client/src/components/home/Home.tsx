@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import axios from 'axios';
+import { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CounterState, decrement, increment } from '../../store/reducers';
 import './Home.css'
@@ -20,8 +21,8 @@ const Home: FC = () => {
     return (
         <div className='home'>
             <MainContent/>
-            <ItemsList name='Новое поступление:'/>
-            <ItemsList name='Берут чаще всего:'/>
+            <ItemsList name='Новое поступление:' url='http://localhost:8080/new_products'/>
+            <ItemsList name='Берут чаще всего:'url='http://localhost:8080/new_products'/>
             <h1>Counter: {count}</h1>
             <button onClick={handleIncrement}>Increment</button>
             <button onClick={handleDecrement}>Decrement</button>
