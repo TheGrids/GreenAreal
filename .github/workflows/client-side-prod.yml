@@ -3,7 +3,10 @@ name: Client-side (prod)
 on:
   push:
     branches: [ main ]
-
+    paths:
+    - '.github/**'
+    - 'client/**'
+    
 
 jobs:
   build:
