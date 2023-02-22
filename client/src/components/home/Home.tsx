@@ -22,7 +22,7 @@ const Home: FC = () => {
         <div className='home'>
             <MainContent/>
             <ItemsList name='Новое поступление:' url='http://localhost:8080/new_products'/>
-            <ItemsList name='Берут чаще всего:'url='http://localhost:8080/new_products'/>
+            <ItemsList name='Берут чаще всего:'url='http://localhost:8080/popular_products'/>
             <h1>Counter: {count}</h1>
             <button onClick={handleIncrement}>Increment</button>
             <button onClick={handleDecrement}>Decrement</button>

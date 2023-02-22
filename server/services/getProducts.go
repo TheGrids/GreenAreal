@@ -18,3 +18,11 @@ func GetNewProducts(c *gin.Context) {
 
 	c.JSON(http.StatusOK, products)
 }
+
+func GetPopularProducts(c *gin.Context) {
+	var products []models.Product
+
+	models.DB.Where("bought <> ?", 0).Order("bought DESC, created_at DESC").Find(&products)
+
+	c.JSON(http.StatusOK, products)
+}
