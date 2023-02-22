@@ -36,15 +36,15 @@ const ItemsList: FC<props> = (props) => {
 
     if (error) {
         return <div>Ошибка: {error.message}</div>;
-        } else if (!isLoaded) {
+    } else if (!isLoaded) {
         return <div>Загрузка...</div>;
-        } else {
+    } else {
         return (
         <div className='main_items_list'>
             <div style={{margin: '20px 0'}}>{props.name}</div>
             <div className='cards_list'>
                 {products.length ? (products.map(item => (
-                    <Card key={item.id} name={item.name} price={item.price} category={item.category} image={item.image}/>
+                    <Card key={item.id} id={item.id} name={item.name} price={item.price} category={item.category} image={item.image}/>
                 ))
                 ) : (
                     <div style={{fontSize: '24px'}}>Список пуст</div>
@@ -52,7 +52,7 @@ const ItemsList: FC<props> = (props) => {
             </div>
         </div>
         );
-        }
+    }
   };
   
 export default ItemsList;

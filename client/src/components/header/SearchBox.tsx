@@ -22,7 +22,7 @@ const SearchBox: FC = () => {
 
     const searchProducts = async () => {
         if (query.length > 0) {
-            const response = await axios.get(import.meta.env.VITE_API_URL + "/api/products", { params: { q: query } })
+            const response = await axios.get(import.meta.env.VITE_API_URL + "/products", { params: { q: query } })
             setProducts(response.data)
         } else {
             setProducts([])
@@ -65,7 +65,9 @@ const SearchBox: FC = () => {
             </form>
             <div className="presearch_suggests" style={{display}}>
                 {products.map((item) => (
-                    <Object key={item.id} name={item.name} category={item.category} image={item.image}/>
+                    <div onClick={() => setIsFocused(false)}>
+                        <Object key={item.id} id={item.id} name={item.name} category={item.category} image={item.image}/>
+                    </div>
                 ))}
             </div>
             <div className="presearch_overlay" style={{display}} onClick={() => setIsFocused(false)}></div>

@@ -38,6 +38,7 @@
 }
 
 .card_img img{
+    user-select: none;
     width: 220px;
     transition: .2s;
 }

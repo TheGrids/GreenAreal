@@ -3,6 +3,7 @@ import { useTheme } from '../../hooks/useTheme'
 import arrowSVG from '../../assets/arrow.svg'
 import './Header.css'
 import SearchBox from './SearchBox';
+import { Link } from 'react-router-dom';
 
 const Header: FC = () => {
 
@@ -14,7 +15,9 @@ const Header: FC = () => {
                 <nav>
                     <div className='nav_box'>
                         <div className='cname_box'>
-                            <a href={import.meta.env.VITE_BASE_URL} className='cname_box_text'>GreenAreal</a>
+                            <Link to={import.meta.env.VITE_BASE_URL}>
+                                <div className='cname_box_text'>GreenAreal</div>
+                            </Link>
                             <span className='cname_box_catalog'>
                                 <div style={{pointerEvents: 'none', userSelect: 'none', margin: '0 12px'}}>Каталог</div>
                                 <img src={arrowSVG} alt="" style={{pointerEvents: 'none', userSelect: 'none'}}/>

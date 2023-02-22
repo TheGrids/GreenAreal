@@ -47,8 +47,15 @@ body {
 }
 
 body{
-  transition: .5s;
   margin: 0;
   background-color: var(--background);
   color: var(--text-primary);
+}
+
+.page{
+  width: var(--max-width);
+  margin: 20px auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }

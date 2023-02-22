@@ -1,7 +1,6 @@
 nav{
     width: 100%;
     position: fixed;
-    transition: .5s;
     height: 96px;
     background-color: var(--background);
     display: flex;

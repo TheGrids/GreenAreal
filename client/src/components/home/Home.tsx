@@ -18,7 +18,7 @@ const Home: FC = () => {
     };
 
     return (
-        <div className='home'>
+        <div>
             <MainContent/>
             <ItemsList name='Новое поступление:' url={import.meta.env.VITE_API_URL + '/new_products'}/>
             <ItemsList name='Берут чаще всего:'url={import.meta.env.VITE_API_URL + '/popular_products'}/>

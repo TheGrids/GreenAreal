@@ -29,7 +29,8 @@ func main() {
 	r.Static("/image", "./image")
 	r.GET("/new_products", services.GetNewProducts)
 	r.GET("/popular_products", services.GetPopularProducts)
-	r.GET("/api/products", services.SearchProducts)
+	r.GET("/products", services.SearchProducts)
+	r.GET("/product/:id", services.Product)
 
 	r.Run()
 }
