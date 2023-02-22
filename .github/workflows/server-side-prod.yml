@@ -52,7 +52,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_DEPLOY }}
         script: |
           cd /home/admin/greenareal/server
-          docker-compose down
+          docker-compose down --rmi local
           docker-compose up -d --build
 
     - name: Update deployment status (success)
