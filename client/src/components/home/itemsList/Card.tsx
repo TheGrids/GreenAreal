@@ -9,7 +9,7 @@ interface props{
 
 const ItemsList: FC<props> = (props) => {
 
-  const url = 'http://localhost:8080/image/category/'+ props.category.toLowerCase() + '/' + props.image
+  const url = import.meta.env.VITE_API_URL + '/image/category/'+ props.category.toLowerCase() + '/' + props.image
 
   return (
       <div className='card'>
