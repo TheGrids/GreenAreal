@@ -31,8 +31,15 @@
 }
 
 .main_content_card_first img{
+    height: 380px;
+    position: absolute;
     margin: 0 20px;
     pointer-events: none;
+    transition: 0.2s;
+}
+
+.main_content_card_first:hover img{
+    height: 400px;
 }
 
 .main_content_card_first .old_cost{
@@ -82,6 +89,16 @@
     font-family: 'InterB';
     font-size: 32px;
     transition: .3s;
+    overflow: hidden;
+}
+
+.main_content_card_second img{
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.main_content_card_second:hover img{
+    scale: 110%;
 }
 
 .main_content_card_second:hover{
@@ -109,8 +126,18 @@
     color: white;
     line-height: 105%;
     transition: .3s;
+    overflow: hidden;
 }
 
 .main_content_card_third:hover{
     background-color: #c9477f;
+}
+
+.main_content_card_third img{
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.main_content_card_third:hover img{
+    scale: 110%;
 }

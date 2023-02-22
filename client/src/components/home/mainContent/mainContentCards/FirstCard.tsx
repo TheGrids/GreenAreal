@@ -5,7 +5,7 @@ const FirstCard: FC = () => {
 
     return (
         <div className='main_content_card_first'>
-            <img src={lawnMowerPNG} alt="" style={{height:'380px', position: 'absolute'}}/>
+            <img src={lawnMowerPNG} alt=""/>
             <div className="block_text">
                 <div>
                     <div style={{fontSize: '48px', fontFamily: 'InterB', marginTop: '45px'}}>GRASSCLEANER V3</div>

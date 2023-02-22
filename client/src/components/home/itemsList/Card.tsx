@@ -1,12 +1,30 @@
 import { FC } from 'react';
 
-const ItemsList: FC = () => {
+interface props{
+  name: string;
+  price: number
+  category: string
+  image: string
+}
 
-    return (
-        <div className='card'>
-            
+const ItemsList: FC<props> = (props) => {
+
+  const url = 'http://localhost:8080/image/category/'+ props.category.toLowerCase() + '/' + props.image
+
+  return (
+      <div className='card'>
+        <div className='card_img'>
+          <img src={url} alt=""/>
         </div>
-    );
-  };
+        <div className='card_info'>
+          <a>{props.name}</a>
+          <div className='card_cart'>
+            <div style={{fontFamily: 'InterB', letterSpacing: '-0.05em', fontSize: '20px'}}>{props.price} ₽</div>
+            <div className='card_price'>Купить</div>
+          </div>
+        </div>
+      </div>
+  );
+};
   
 export default ItemsList;

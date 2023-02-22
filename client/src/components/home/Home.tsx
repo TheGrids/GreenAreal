@@ -20,8 +20,8 @@ const Home: FC = () => {
     return (
         <div className='home'>
             <MainContent/>
-            <ItemsList name='Новое поступление:'/>
-            <ItemsList name='Берут чаще всего:'/>
+            <ItemsList name='Новое поступление:' url={import.meta.env.VITE_API_URL + '/new_products'}/>
+            <ItemsList name='Берут чаще всего:'url={import.meta.env.VITE_API_URL + '/popular_products'}/>
             <h1>Counter: {count}</h1>
             <button onClick={handleIncrement}>Increment</button>
             <button onClick={handleDecrement}>Decrement</button>
