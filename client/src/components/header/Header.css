@@ -1,10 +1,13 @@
 nav{
+    width: 100%;
+    position: fixed;
     transition: .5s;
-    height: 114px;
+    height: 96px;
     background-color: var(--background);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .nav_box{

@@ -47,6 +47,7 @@ const Header: FC = () => {
                         </div>
                     </div>
                 </nav>
+                <div style={{height: '96px'}}></div>
             </header>
         </div>
     );
