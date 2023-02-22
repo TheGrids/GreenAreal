@@ -42,7 +42,18 @@ jobs:
         environment: prod
 
     - name: Deploy static content to local server (rsync)
-      run: rsync -avz server/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/admin/server
+      run: rsync -avz server/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/admin/greenareal/server
+      
+    - name: Connect to server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_DEPLOY }}
+        script: |
+          cd /home/admin/greenareal/server
+          docker-compose down
+          docker-compose up -d --build
 
     - name: Update deployment status (success)
       if: success()
