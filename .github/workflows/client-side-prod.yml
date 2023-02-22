@@ -36,7 +36,12 @@ jobs:
       run: |
         echo "VITE_API_URL=${VITE_API_URL}" >> .env
         echo "VITE_BASE_URL=${VITE_BASE_URL}" >> .env
-    
+        
+    - name: Use dotenv to load environment variables
+      uses: bebraw/dotenv-action@v1
+      with:
+        path: .env
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
