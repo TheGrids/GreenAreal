@@ -61,6 +61,7 @@ nav{
 }
 
 .search_box{
+    position: relative;
     background-color: white;
     width: 570px;
     height: 68px;
@@ -70,6 +71,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 5;
 }
 
 .search_box input{
@@ -77,6 +79,7 @@ nav{
 }
 
 .search_button{
+    border: none;
     margin: 0 15px;
     width: 40px;
     height: 40px;
@@ -101,6 +104,32 @@ nav{
     width: 500px;
     padding: 0 15px;
     border-radius: var(--border-radius);
+}
+
+.search_box input:focus .presearch_overlay{
+    display: block;
+}
+
+.presearch_suggests{
+    margin: 0 20px;
+    position: absolute;
+    width: 570px;
+    padding-bottom: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: var(--shadow);
+    border-radius: 0 0 12px 12px;
+    z-index: 5;
+}
+
+.presearch_overlay {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 3;
 }
 
 .nav_buttons{
@@ -136,4 +165,20 @@ nav{
 
 .theme:hover{
     background-color: var(--moon_btn-hover);
+}
+
+
+.object{
+    font-family: 'InterB';
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 15px;
+    user-select: none;
+}
+
+.object:hover{
+    color: var(--accent-hover);
+    cursor: pointer;
 }

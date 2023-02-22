@@ -11,8 +11,6 @@ const ItemsList: FC<props> = (props) => {
 
   const url = 'http://localhost:8080/image/category/'+ props.category.toLowerCase() + '/' + props.image
 
-  console.log(url)
-
   return (
       <div className='card'>
         <div className='card_img'>

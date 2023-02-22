@@ -17,7 +17,7 @@ interface props{
 }
 
 const ItemsList: FC<props> = (props) => {
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<any>(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [products, setProducts] = useState<IProduct[]>([]);
 
@@ -35,7 +35,7 @@ const ItemsList: FC<props> = (props) => {
     }, []);
 
     if (error) {
-        return <div>Ошибка: {error}</div>;
+        return <div>Ошибка: {error.message}</div>;
         } else if (!isLoaded) {
         return <div>Загрузка...</div>;
         } else {
