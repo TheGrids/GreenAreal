@@ -6,6 +6,11 @@ on:
     paths:
     - '.github/**'
     - 'client/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+    - '.github/**'
+    - 'client/**'
     
 
 jobs:
@@ -27,8 +32,10 @@ jobs:
     - name: Setup environment variables
       env:
         VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
+        VITE_API_URL: ${{ secrets.VITE_API_URL }}
       run: |
         echo "VITE_BASE_URL=${VITE_BASE_URL}" >> .env
+        echo "VITE_API_URL=${VITE_API_URL}" >> .env
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2

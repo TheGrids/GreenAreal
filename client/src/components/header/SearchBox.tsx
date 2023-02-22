@@ -1,6 +1,5 @@
 import axios from "axios";
 import { FC, useEffect, useState } from "react";
-import Card from "../home/itemsList/Card";
 import Object from "./Object";
 
 interface Product {
@@ -23,7 +22,7 @@ const SearchBox: FC = () => {
 
     const searchProducts = async () => {
         if (query.length > 0) {
-            const response = await axios.get("http://localhost:8080/api/products", { params: { q: query } })
+            const response = await axios.get(import.meta.env.VITE_API_URL + "/api/products", { params: { q: query } })
             setProducts(response.data)
         } else {
             setProducts([])
