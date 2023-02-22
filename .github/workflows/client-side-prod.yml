@@ -34,8 +34,8 @@ jobs:
         VITE_API_URL: ${{ secrets.VITE_API_URL }}
         VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
       run: |
-        echo "VITE_API_URL=${VITE_API_URL}" >> .env
-        echo "VITE_BASE_URL=${VITE_BASE_URL}" >> .env
+        echo "VITE_API_URL=${VITE_API_URL}" >> .env.production
+        echo "VITE_BASE_URL=${VITE_BASE_URL}" >> .env.production
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
