@@ -18,7 +18,7 @@ const ItemsList: FC<props> = (props) => {
       <div className='card'>
         <div className='card_img'>
           <Link to={product_url}>
-            <img src={image_url} alt=""/>
+            <img src={image_url} alt={props.name}/>
           </Link>
         </div>
         <div className='card_info'>

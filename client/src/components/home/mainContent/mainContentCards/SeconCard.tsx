@@ -9,7 +9,7 @@ const SecondCard: FC = () => {
     return (
         <Link to={product_url}>
             <div className='main_content_card_second'>
-                <img src={trimmerIMG} alt=""/>
+                <img src={trimmerIMG} alt="GRASSCLEANER Lite"/>
                 <div style={{position: 'absolute'}}>
                     <div style={{borderRadius: '12px 12px 0px 12px'}} className="text">GRASSCLEANER</div>
                     <div style={{display: 'flex', justifyContent: 'flex-end'}}>

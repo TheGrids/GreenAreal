@@ -2,6 +2,7 @@ import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import './Product.css'
+import {Helmet} from "react-helmet";
 
 interface IProduct {
     id: number;
@@ -42,10 +43,15 @@ const Product: FC = () => {
     } else {
         return (
         <div className='main_item_card'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{product?.name}</title>
+                <link rel="canonical" href="http://greenareal.ru/product/:id" />
+            </Helmet>
             <div>{product?.name}</div>
             <div className='price'>
-                <img src={image_url + product?.image} alt="" />
-                <div>{product?.price}  ₽</div>
+                <img src={image_url + product?.image} alt={product?.name} />
+                <div>{product?.price} ₽</div>
             </div>
         </div>
         );

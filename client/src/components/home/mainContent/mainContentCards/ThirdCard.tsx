@@ -5,7 +5,7 @@ const ThirdCard: FC = () => {
 
     return (
         <div className='main_content_card_third'>
-            <img src={chainsawPNG} alt=""/>
+            <img src={chainsawPNG} alt="WoodDestroyer series"/>
             <div style={{position: 'absolute', margin:'12px 10px'}}>WoodDestroyer<br/>series</div>
         </div>
     );

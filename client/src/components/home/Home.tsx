@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { CounterState, decrement, increment } from '../../store/reducers';
 import './Home.css'
@@ -19,12 +20,17 @@ const Home: FC = () => {
 
     return (
         <div>
-            <MainContent/>
-            <ItemsList name='Новое поступление:' url={import.meta.env.VITE_API_URL + '/new_products'}/>
-            <ItemsList name='Берут чаще всего:'url={import.meta.env.VITE_API_URL + '/popular_products'}/>
-            <h1>Counter: {count}</h1>
-            <button onClick={handleIncrement}>Increment</button>
-            <button onClick={handleDecrement}>Decrement</button>
+          <Helmet>
+              <meta charSet="utf-8" />
+              <title>Главная</title>
+              <link rel="canonical" href="http://greenareal.ru/" />
+          </Helmet>
+          <MainContent/>
+          <ItemsList name='Новое поступление:' url={import.meta.env.VITE_API_URL + '/new_products'}/>
+          <ItemsList name='Берут чаще всего:'url={import.meta.env.VITE_API_URL + '/popular_products'}/>
+          <h1>Counter: {count}</h1>
+          <button onClick={handleIncrement}>Increment</button>
+          <button onClick={handleDecrement}>Decrement</button>
         </div>
     );
 };

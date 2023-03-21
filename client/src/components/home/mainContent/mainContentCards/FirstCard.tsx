@@ -9,7 +9,7 @@ const FirstCard: FC = () => {
     return (
         <Link to={product_url} style={{height: '100%'}}>
             <div className='main_content_card_first'>
-                <img src={lawnMowerPNG} alt=""/>
+                <img src={lawnMowerPNG} alt="GRASSCLEANER V3"/>
                 <div className="block_text">
                     <div>
                         <div style={{fontSize: '48px', fontFamily: 'InterB', marginTop: '45px'}}>GRASSCLEANER V3</div>
