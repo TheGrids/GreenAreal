@@ -48,10 +48,18 @@ const Product: FC = () => {
                 <title>{product?.name}</title>
                 <link rel="canonical" href="http://greenareal.ru/product/:id" />
             </Helmet>
-            <div>{product?.name}</div>
-            <div className='price'>
-                <img src={image_url + product?.image} alt={product?.name} />
-                <div>{product?.price} ₽</div>
+            <img src={image_url + product?.image} alt={product?.name} />
+            <div className='info'>
+                <div>{product?.name}</div>
+                <div className='bottom'>
+                <div className='available_box'>
+                        <div className='available'>Есть в наличии</div>
+                    </div>
+                    <div className='price'>
+                        {product?.price} ₽
+                        <div className='buy'>Купить</div>
+                    </div>
+                </div>
             </div>
         </div>
         );
