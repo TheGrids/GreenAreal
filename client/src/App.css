@@ -63,6 +63,5 @@ body{
 @media (max-width: 1200px) {
   .page{
     width: auto;
-    min-width: 420px;
   }
 }
