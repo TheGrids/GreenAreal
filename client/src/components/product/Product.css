@@ -73,3 +73,22 @@
     margin: 24px;
     margin-right: 80px;
 }
+
+@media (max-width: 1200px) {
+    .main_item_card{
+        flex-direction: column;
+        margin: 20px;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .main_item_card img{
+        max-width: 80vw;
+        margin-right: 0;
+    }
+
+    .main_item_card .info{
+        width: 100%;
+        margin: 0;
+    }
+}

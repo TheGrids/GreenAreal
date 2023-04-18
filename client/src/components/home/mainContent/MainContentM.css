@@ -1,0 +1,9 @@
+@media (max-width: 1200px) {
+    .main_content{
+        display: none;
+    }
+
+    .mobile_content{
+        display: flex;
+    }
+}

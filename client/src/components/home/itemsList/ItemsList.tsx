@@ -2,6 +2,7 @@ import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
 import Card from './Card';
 import './ItemsList.css'
+import './ItemsListM.css'
 
 interface IProduct {
     id: number;

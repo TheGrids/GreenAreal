@@ -1,0 +1,35 @@
+@media (max-width: 1200px) {
+    .nav_buttons{
+        display: none;
+    }
+
+    .search_box{
+        display: none;
+    }
+
+    .cname_box_catalog{
+        display: none;
+    }
+
+    .cname_box{
+        width: auto;
+        height: 55px;
+    }
+
+    .nav_box{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cname_box_text{
+        width: auto;
+        padding: 0 15px 0 11px;
+        margin-right: 0;
+    }
+
+    .cname_box_text:hover{
+        height: 55px;
+        width: auto;
+        border-radius: var(--border-radius);
+    }
+}

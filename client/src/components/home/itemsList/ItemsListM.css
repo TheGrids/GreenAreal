@@ -1,0 +1,5 @@
+@media (max-width: 1200px) {
+    .main_items_list{
+        display: none;
+    }
+}

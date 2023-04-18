@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useTheme } from '../../hooks/useTheme'
 import arrowSVG from '../../assets/arrow.svg'
 import './Header.css'
+import './HeaderM.css'
 import SearchBox from './SearchBox';
 import { Link } from 'react-router-dom';
 

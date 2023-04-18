@@ -141,3 +141,34 @@
 .main_content_card_third:hover img{
     scale: 110%;
 }
+
+.mobile_content{
+    display: none;
+}
+
+.mobile_content_card_first img{
+    overflow: hidden;
+    width: 94vw;
+    max-width: 400px;
+}
+
+.mobile_content_card_first{
+    border-radius: var(--border-radius);
+    background-color: #4B31B0;
+}
+
+.mobile_content_card_first_block_text {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    white-space: nowrap;
+}
+
+.mobile_content_card_first .new_cost{
+    font-family: 'InterB';
+    font-size: 3vw;
+}
