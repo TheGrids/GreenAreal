@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from 'react';
 import Card from './Card';
 import './ItemsList.css'
 import './ItemsListM.css'
+import LoadingSpinner from '../../spinner/Spinner';
 
 interface IProduct {
     id: number;
@@ -38,7 +39,7 @@ const ItemsList: FC<props> = (props) => {
     if (error) {
         return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Загрузка...</div>;
+        return <div><LoadingSpinner/></div>
     } else {
         return (
         <div className='main_items_list'>

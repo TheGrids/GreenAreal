@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import './Product.css'
 import {Helmet} from "react-helmet";
+import LoadingSpinner from '../spinner/Spinner';
 
 interface IProduct {
     id: number;
@@ -39,7 +40,7 @@ const Product: FC = () => {
     if (error) {
         return <div>Ошибка: Товар не найден</div>;
     } else if (!isLoaded) {
-        return <div>Загрузка...</div>;
+        return <div><LoadingSpinner/></div>;
     } else {
         return (
         <div className='main_item_card'>

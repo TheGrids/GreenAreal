@@ -8,15 +8,6 @@ import MainContent from './mainContent/MainContent';
 
 const Home: FC = () => {
     const count = useSelector((state: { counter: CounterState }) => state.counter.count);
-    const dispatch = useDispatch();
-  
-    const handleIncrement = () => {
-      dispatch(increment(1));
-    };
-  
-    const handleDecrement = () => {
-      dispatch(decrement(1));
-    };
 
     return (
         <div>
