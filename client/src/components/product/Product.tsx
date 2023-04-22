@@ -27,6 +27,7 @@ const Product: FC = () => {
     let location = useLocation();
 
     useEffect(() => {
+        setIsLoaded(false)
         axios
             .get<IProduct>(product_api_url)
             .then(response => {

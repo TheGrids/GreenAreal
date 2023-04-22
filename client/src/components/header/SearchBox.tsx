@@ -59,11 +59,13 @@ const SearchBox: FC = () => {
     const navigate = useNavigate();
     const handleSubmit = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
-        navigate('/search', {replace: true});
-        searchInput.current.blur()
-        setIsFocused(false)
-        setValue("")
-        setProducts([])
+        if (query.length > 0) {
+            navigate('/search?' + value, {replace: true});
+            searchInput.current.blur()
+            setIsFocused(false)
+            setValue("")
+            setProducts([])
+        }
       };
 
     return (
