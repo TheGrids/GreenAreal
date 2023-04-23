@@ -58,6 +58,7 @@ body{
   overflow: hidden;
   display: flex;
   justify-content: center;
+  min-height: calc(100vh - 200px);
 }
 
 @media (max-width: 1200px) {

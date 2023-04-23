@@ -28,6 +28,7 @@ const Product: FC = () => {
 
     useEffect(() => {
         setIsLoaded(false)
+        window.scrollTo(0, 0)
         axios
             .get<IProduct>(product_api_url)
             .then(response => {

@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Card from "../home/itemsList/Card";
 import LoadingSpinner from "../spinner/Spinner";
+import { Helmet } from "react-helmet";
 
 interface IResult {
     id: number;
@@ -23,6 +24,7 @@ const Result: FC = () => {
     const [results, setResults] = useState<IResult[]>([]);
     
     useEffect(() => {
+        window.scrollTo(0, 0)
         setIsLoaded(false)
         axios
             .get<IResult[]>(search_api_url, {
@@ -48,6 +50,11 @@ const Result: FC = () => {
     } else {
         return (
             <div className="search_result">
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Поиск: {res}</title>
+                    <link rel="canonical" href={"http://greenareal.ru/search" + location.search} />
+                </Helmet>
                 <div>Поиск: {res}</div>
                 <div style={{display: 'flex', flexDirection: 'row', flexFlow: 'wrap', justifyContent: 'center'}}>
                     {results.length ? (results.map(item => (

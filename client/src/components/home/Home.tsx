@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { CounterState, decrement, increment } from '../../store/reducers';
@@ -8,6 +8,9 @@ import MainContent from './mainContent/MainContent';
 
 const Home: FC = () => {
     const count = useSelector((state: { counter: CounterState }) => state.counter.count);
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
 
     return (
         <div>
