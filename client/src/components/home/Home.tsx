@@ -17,7 +17,7 @@ const Home: FC = () => {
           <Helmet>
               <meta charSet="utf-8" />
               <title>Главная</title>
-              <link rel="canonical" href="http://greenareal.ru/" />
+              <link rel="canonical" href="https://greenareal.ru/" />
           </Helmet>
           <MainContent/>
           <ItemsList name='Новое поступление:' url={import.meta.env.VITE_API_URL + '/new_products'}/>

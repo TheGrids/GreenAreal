@@ -17,12 +17,14 @@ interface IResult {
 const Cart: FC = () => {
 
     let lst: any = []
+    let a = 0
     let location = useLocation();
     let res = decodeURIComponent(location.search.slice(1))
     let search_api_url = import.meta.env.VITE_API_URL + '/products'
     const [error, setError] = useState<any>(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [list, setList] = useState<any>([])
+    const [price, setPrice] = useState(0)
     const [results, setResults] = useState<IResult[]>([]);
     const [isChecked, setIsChecked] = useState(false)
     
@@ -34,6 +36,11 @@ const Cart: FC = () => {
             let b = JSON.parse(itemsFromStorage)
             setList(b)
             setIsLoaded(true)
+            a = 0
+            JSON.parse(itemsFromStorage).forEach((item: { price: number; count: number; }) => {
+                a += item.price * item.count
+            })
+            setPrice(a)
         } else {
             setList([])
             setIsLoaded(true)
@@ -57,14 +64,19 @@ const Cart: FC = () => {
             setList([])
             setIsLoaded(true)
         }
+        
     }, [isChecked]);
 
     const incr = ((sum: any, id: any) => {
-        var itemsFromStorage = localStorage.getItem('cart')
+        let itemsFromStorage = localStorage.getItem('cart')
         if (itemsFromStorage != null && sum) {
             let b = JSON.parse(itemsFromStorage)
             b.find((lst: { id: number; }) => lst.id == id).count += 1
-            localStorage.setItem('cart', JSON.stringify(b));
+            localStorage.setItem('cart', JSON.stringify(b))
+            a = 0
+            b.forEach((item: { price: number; count: number; }) => {
+                a += item.price * item.count
+            })
             setIsChecked(!isChecked)
         } else if (itemsFromStorage != null && !sum) {
             let b = JSON.parse(itemsFromStorage)
@@ -72,11 +84,16 @@ const Cart: FC = () => {
             if (b.find((lst: { id: number; }) => lst.id == id).count < 1) {
                 b.splice(b.findIndex((lst: { id: number; }) => lst.id == id), 1)
             }
+            a = 0
+            b.forEach((item: { price: number; count: number; }) => {
+                a += item.price * item.count
+            })
             localStorage.setItem('cart', JSON.stringify(b));
             setIsChecked(!isChecked)
         } else {
             console.log('Ошибка. Очистите localstorage и перезапустите страницу.')
         }
+        setPrice(a)
     })
 
     if (error) {
@@ -89,7 +106,7 @@ const Cart: FC = () => {
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Корзина</title>
-                    <link rel="canonical" href={"http://greenareal.ru/cart"} />
+                    <link rel="canonical" href={"https://greenareal.ru/cart"} />
                 </Helmet>
                 <div>Корзина:</div>
                 <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
@@ -109,6 +126,14 @@ const Cart: FC = () => {
                         ))
                         ) : (
                             <div style={{fontSize: '24px'}}>Ничего не найдено :(</div>
+                        )}
+                        {price > 0 ? (
+                            <div style={{display: 'flex', justifyContent:'end', fontSize: '24px'}}>
+                            <div style={{marginRight: '10px'}}>Итого: {price}</div>
+                            <div className="card_price">Оплатить</div>
+                        </div>
+                        ) : (
+                            <div></div>
                         )}
                     </div>
                 </div>

@@ -6,6 +6,9 @@ import Product from './components/product/Product';
 import Result from './components/result/Result';
 import Footer from './components/footer/Footer';
 import Cart from './components/cart/Cart';
+import AllProducts from './components/allProducts/AllProducts';
+import About from './components/about/About';
+import Work from './components/work/Work';
 
 
 function App() {
@@ -17,8 +20,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path='/product/:id' element={<Product/>}/>
+          <Route path='/products' element={<AllProducts/>}/>
           <Route path='/search' element={<Result/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/work' element={<Work/>}/>
           <Route path='*' element={<div>404 Not Found</div>}/>
         </Routes>
       </div>

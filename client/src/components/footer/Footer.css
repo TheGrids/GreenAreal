@@ -11,7 +11,7 @@
 }
 
 .footer_column{
-    margin: 0 20px;
+    margin: 0 80px;
     display: flex;
     flex-direction: column;
 }

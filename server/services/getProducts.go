@@ -14,7 +14,7 @@ type a struct {
 func GetNewProducts(c *gin.Context) {
 	var products []models.Product
 
-	models.DB.Order("created_at DESC, name DESC").Find(&products)
+	models.DB.Order("created_at DESC, name DESC").Limit(4).Find(&products)
 
 	c.JSON(http.StatusOK, products)
 }
@@ -22,7 +22,15 @@ func GetNewProducts(c *gin.Context) {
 func GetPopularProducts(c *gin.Context) {
 	var products []models.Product
 
-	models.DB.Where("bought <> ?", 0).Order("bought DESC, created_at DESC").Find(&products)
+	models.DB.Where("bought <> ?", 0).Order("bought DESC, created_at DESC").Limit(4).Find(&products)
+
+	c.JSON(http.StatusOK, products)
+}
+
+func GetAllProducts(c *gin.Context) {
+	var products []models.Product
+
+	models.DB.Find(&products)
 
 	c.JSON(http.StatusOK, products)
 }
