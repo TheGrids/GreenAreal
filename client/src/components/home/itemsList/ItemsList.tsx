@@ -23,6 +23,8 @@ const ItemsList: FC<props> = (props) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [products, setProducts] = useState<IProduct[]>([]);
 
+    
+
     useEffect(() => {
         axios
             .get<IProduct[]>(props.url)

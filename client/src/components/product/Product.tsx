@@ -42,6 +42,24 @@ const Product: FC = () => {
             })
     }, [location]);
 
+    let list: any = [];
+
+    const handleSubmit = (event: { preventDefault: () => void; }) => {
+        var itemsFromStorage = localStorage.getItem('cart') // сейчас там строка
+        if (itemsFromStorage != null) {
+          list = JSON.parse(itemsFromStorage)
+          if (list.find((lst: { id: number; }) => lst.id == product?.id)) {
+            list.find((lst: { id: number; }) => lst.id == product?.id).count += 1
+          } else {
+            list.push({id: product?.id, 'name': product?.name, 'price': product?.price, 'image': product?.image, 'count': 1})
+          }
+        } else {
+          list = []
+          list.push({id: product?.id, 'name': product?.name, 'price': product?.price, 'image': product?.image, 'count': 1})
+        }
+        localStorage.setItem('cart', JSON.stringify(list));
+      };
+
     if (error) {
         return <div>Ошибка: Товар не найден</div>;
     } else if (!isLoaded) {
@@ -63,7 +81,7 @@ const Product: FC = () => {
                     </div>
                     <div className='price'>
                         {product?.price} ₽
-                        <div className='buy'>Купить</div>
+                        <div className='buy' onClick={handleSubmit}>Купить</div>
                     </div>
                 </div>
             </div>

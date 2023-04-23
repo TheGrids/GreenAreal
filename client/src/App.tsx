@@ -5,6 +5,7 @@ import Home from './components/home/Home';
 import Product from './components/product/Product';
 import Result from './components/result/Result';
 import Footer from './components/footer/Footer';
+import Cart from './components/cart/Cart';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path='/product/:id' element={<Product/>}/>
           <Route path='/search' element={<Result/>}/>
+          <Route path='/cart' element={<Cart/>}/>
           <Route path='*' element={<div>404 Not Found</div>}/>
         </Routes>
       </div>

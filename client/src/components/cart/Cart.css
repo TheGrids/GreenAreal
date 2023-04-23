@@ -1,0 +1,31 @@
+.cart_product{
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    width: 100%;
+    justify-content: space-between;
+    background-color: gainsboro;
+    margin: 10px 0;
+    padding: 10px;
+    align-items: center;
+}
+
+.cart_product .count{
+    margin: 0 20px;
+}
+
+.incr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.incr:hover{
+    background-color: rgb(245, 245, 245);
+}
