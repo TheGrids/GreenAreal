@@ -49,7 +49,7 @@ const Result: FC = () => {
         return (
             <div className="search_result">
                 <div>Поиск: {res}</div>
-                <div style={{display: 'flex', flexDirection: 'row'}}>
+                <div style={{display: 'flex', flexDirection: 'row', flexFlow: 'wrap', justifyContent: 'center'}}>
                     {results.length ? (results.map(item => (
                         <div style={{margin: '10px'}}><Card key={item.id} id={item.id} name={item.name} price={item.price} category={item.category} image={item.image}/></div>
                     ))
