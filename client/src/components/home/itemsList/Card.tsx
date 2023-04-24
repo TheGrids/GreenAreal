@@ -1,5 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 interface props{
   id: number
@@ -19,8 +22,9 @@ const ItemsList: FC<props> = (props) => {
   const [list, setList] = useState<any>([])
   let lst: any = [];
 
+  
+
   useEffect(() => {
-    console.log(props.image)
     var itemsFromStorage = localStorage.getItem('cart') // сейчас там строка
     if (itemsFromStorage != null) {
         let b = JSON.parse(itemsFromStorage)
@@ -45,6 +49,7 @@ const ItemsList: FC<props> = (props) => {
       lst = []
       lst.push({id: props.id, 'name': props.name, 'price': props.price, 'image': props.image, 'count': 1})
     }
+    toast("Товар добавлен в корзину.");
     localStorage.setItem('cart', JSON.stringify(lst));
     setBuy(true)
   };
@@ -69,6 +74,7 @@ const ItemsList: FC<props> = (props) => {
             )}
           </div>
         </div>
+        <ToastContainer />
       </div>
   );
 };
