@@ -15,23 +15,26 @@ func main() {
 
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:5173", "https://greenareal.ru", "http://127.0.0.1:5173"},
-		AllowHeaders:     []string{"Role", "Origin", "Content-Type", "Authorization"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"},
 		AllowCredentials: true,
 		MaxAge:           1 * time.Minute,
 	}))
 
-	//api := r.Group("/api")
-	//{
-	//	api.POST("/register", services.RegisterUser)
-	//}
-
-	r.Static("/image", "./image")
-	r.GET("/new_products", services.GetNewProducts)
-	r.GET("/popular_products", services.GetPopularProducts)
-	r.GET("/all", services.GetAllProducts)
-	r.GET("/products", services.SearchProducts)
-	r.GET("/product/:id", services.Product)
+	api := r.Group("/api")
+	{
+		api.Static("/image", "./image")
+		api.GET("/new_products", services.GetNewProducts)
+		api.GET("/popular_products", services.GetPopularProducts)
+		api.GET("/all", services.GetAllProducts)
+		api.GET("/products", services.SearchProducts)
+		api.GET("/product/:id", services.Product)
+		auth := api.Group("/auth")
+		{
+			auth.POST("/signup", services.SignUp)
+			auth.POST("/signin", services.SignIn)
+		}
+	}
 
 	r.Run()
 }
