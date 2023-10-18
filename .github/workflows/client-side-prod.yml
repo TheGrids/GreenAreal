@@ -31,8 +31,8 @@
 #
 #    - name: Setup environment variables
 #      run: |
-#        echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> .env.production
-#        echo "VITE_BASE_URL=${{ secrets.VITE_BASE_URL }}" >> .env.production
+#        echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> .env.development.production
+#        echo "VITE_BASE_URL=${{ secrets.VITE_BASE_URL }}" >> .env.development.production
 #
 #    - name: Use Node.js ${{ matrix.node-version }}
 #      uses: actions/setup-node@v2

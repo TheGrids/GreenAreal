@@ -1,7 +1,6 @@
 package services
 
 import (
-	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
@@ -58,12 +57,9 @@ func SignIn(c *gin.Context) {
 	secure := true
 	if os.Getenv("COOKIE_SECURE") == "false" {
 		secure = false
-		fmt.Println(secure)
 	}
 
-	//c.SetCookie("refresh_token", createToken(user, 60*24*30), 60*60*24*30, "/api/auth", os.Getenv("COOKIE_DOMAIN"), secure, true) // if https: secure = true
-	//c.SetCookie("refresh_token", "aboba", 100, "/api/auth", os.Getenv("COOKIE_DOMAIN"), secure, true) // if https: secure = true
-	//c.JSON(http.StatusOK, gin.H{"access": CreateToken(user)})
+	c.SetCookie("refresh_token", createToken(user, 60*24*30), 60*60*24*30, "/api/auth", os.Getenv("COOKIE_DOMAIN"), secure, true) // if https: secure = true
 	c.JSON(http.StatusOK, gin.H{"msg": "Успешно"})
 }
 

@@ -27,7 +27,7 @@ const signIn: FC = () => {
         axios.post(import.meta.env.VITE_API_URL + `/auth/signin`, {
             email: user.email,
             password: user.password
-        })
+        }, { withCredentials: true })
             .then(res => {
                 console.log(res);
                 console.log(res.data);
