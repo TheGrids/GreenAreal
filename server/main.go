@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"greenareal.ru/m/v2/models"
@@ -12,8 +11,10 @@ import (
 func main() {
 	r := gin.Default()
 
+	// Подключение к БД
 	models.ConnectionDataBase()
 
+	// Настройка политики CORS
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:5173", "https://greenareal.ru", "http://127.0.0.1:5173"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
@@ -22,6 +23,7 @@ func main() {
 		MaxAge:           1 * time.Minute,
 	}))
 
+	// Настройка роутера
 	api := r.Group("/api")
 	{
 		api.Static("/image", "./image")
@@ -35,19 +37,11 @@ func main() {
 			auth.POST("/signup", services.SignUp)
 			auth.POST("/signin", services.SignIn)
 		}
-
-		api.GET("/cookie", func(c *gin.Context) {
-
-			cookie, err := c.Cookie("gin_cookie")
-
-			if err != nil {
-				cookie = "NotSet"
-				c.SetCookie("gin_cookie", "test", 3600, "/", "localhost", false, true)
-			}
-
-			fmt.Printf("Cookie value: %s \n", cookie)
-		})
 	}
 
-	r.Run()
+	// Запуск сервера
+	err := r.Run()
+	if err != nil {
+		return
+	}
 }

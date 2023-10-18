@@ -10,8 +10,9 @@ import (
 
 var DB *gorm.DB
 
+// ConnectionDataBase Подключение к БД
 func ConnectionDataBase() {
-	// Checking .env file
+	// Проверка .env файла
 	err := godotenv.Load()
 	if err != nil {
 		return
@@ -21,14 +22,14 @@ func ConnectionDataBase() {
 		log.Printf("Error loading .env file")
 	}
 
-	// Database connection
+	// Подключение к БД
 	database, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {
 		panic(err)
 	}
 
-	// Adding schema to database
+	// Автомиграция таблиц в БД
 	err = database.AutoMigrate(&User{}, &Product{}, &Order{})
 	if err != nil {
 		return
